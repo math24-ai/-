@@ -1,10 +1,10 @@
 const db = require('./db');
 
-// 示例商品数据，包括图片
 const products = [
-    { name: '商品1', price: 1.5, description: 'Fresh red apple', image: 'image_1.jpg' },
-    { name: '商品2', price: 0.8, description: 'Ripe yellow banana', image: 'image_2.jpg' },
-    { name: '商品3', price: 1.2, description: 'Juicy orange', image: 'image_3.jpg' }
+    { name: '商品1', price: 11.5, description: '这是商品1', image: 'image_1.jpg' },
+    { name: '商品2', price: 24.2, description: '这是商品2', image: 'image_2.jpg' },
+    { name: '商品3', price: 36.0, description: '这是商品3', image: 'image_3.jpg' },
+    { name: '商品4', price: 55.5, description: '这是商品4', image: 'image_4.jpg' }
 ];
 
 // 插入商品数据
