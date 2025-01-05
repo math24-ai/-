@@ -3,14 +3,11 @@ const path = require('path');
 const db = require('./db');
 const app = express();
 
-// 配置ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// 配置静态文件目录
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 使用 URL 编码解析
 app.use(express.urlencoded({ extended: true }));
 
 // 首页：显示商品列表
@@ -31,7 +28,7 @@ app.post('/add-to-cart', (req, res) => {
     res.redirect('/');
 });
 
-// 查看购物车
+// 购物车
 app.get('/cart', (req, res) => {
     const cartItems = db.prepare(`
     SELECT p.name, p.price, p.image, c.quantity, (p.price * c.quantity) AS total, p.id AS product_id
