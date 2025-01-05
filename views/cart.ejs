@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" href="/css/Universal.css">
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo"><a href="/">logo</a></div>
+        <ul>
+            <li><a href="/cart">购物车</a></li>
+            <li><a href="/">用户</a></li>
+            <li><a href="/">设置</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>购物车</h1>
+    <% if (cartItems.length > 0) { %>
+        <ul>
+            <% cartItems.forEach(item => { %>
+                <li>
+                    <img src="/images/<%= item.image %>" alt="<%= item.name %>"/>
+                    <span>
+                        <%= item.name %> - ¥<%= item.price %> x <%= item.quantity %> = ¥<%= item.total %>
+                    </span>
+                    <form action="/remove-from-cart" method="POST" style="display:inline;">
+                        <input type="hidden" name="product_id" value="<%= item.product_id %>">
+                        <button type="submit">取消</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+        <p style="margin: auto"><strong style="font-size: 36px">总计: ¥<%= cartTotal %></strong></p>
+        <div class="cart-return">
+            <button>
+                <a href="/" style="color: rgba(0,0,0,.4); font-size: 18px; text-shadow: 0 0 5px black;">继续购物</a>
+            </button>
+            <button>
+                <a href="/checkout" style="color: rgba(0,0,0,.4); font-size: 18px; text-shadow: 0 0 5px black;">去结算</a>
+            </button>
+        </div>
+    <% } else { %>
+    <div>
+        <p>购物车是空的！</p>
+        <a href="/">返回购物</a>
+    </div>
+    <% } %>
+</main>
+<footer>
+    <p>&copy; 2025 <strong>购物网站</strong>. 版权所有xxx | <a href="#">隐私政策</a> | <a href="#">服务条款</a></p>
+</footer>
+</body>
+</html>

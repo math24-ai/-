@@ -1,0 +1,74 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: black;
+    color: white;
+    padding: 20px;
+    gap: 20px;
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+main li {
+    width: 298px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border-radius: 20px;
+
+    .Shopping-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+        align-items: center;
+        padding: 20px;
+        height: calc(100% - 60px);
+        width: 100%;
+        overflow-y: hidden;
+        font-size: 18px;
+        border: 5px solid white;
+        border-radius: 20px 20px 2px 2px;
+
+        img {
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+    }
+}
+
+.Shopping-column {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    input {
+        height: 30px;
+        font-size: 18px;
+        border: none;
+        background: rgba(0,0,0,1);
+        border-left: 2px solid white;
+        border-right: 2px solid white;
+        color: white;
+    }
+    button {
+        height: 40px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+    }
+}
