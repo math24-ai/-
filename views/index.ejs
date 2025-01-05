@@ -19,7 +19,8 @@
             transition: transform 0.5s ease;
 
             .carousel-item {
-                width: 100vw;
+                width: 100%;
+                height: 100%;
             }
         }
         .carousel-images img {
@@ -125,7 +126,7 @@
         function showSlide(index) {
             if (index < 0) index = totalSlides - 1;
             if (index >= totalSlides) index = 0;
-            carouselImages.style.transform = `translateX(-${index * 100}%)`;
+            carouselImages.style.transform = `translateX(-${index * 100}vw)`;
             currentSlide = index;
         }
 
